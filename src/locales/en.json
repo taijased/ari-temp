@@ -1,0 +1,18 @@
+{
+  "internationalization": {
+    "title": "Русская версия"
+  },
+  "error404": {
+    "subtitle": "Page Not Found",
+    "btntitle": "Take me out of here"
+  },
+  "contacts": {
+    "title": "Site and app are under development",
+    "description": "Subscribe for updates and be one of the first to keep the design of your home in the palm of your hand",
+    "subscribe": "Subscribe",
+    "email": "Your e-mail",
+    "success_title": "Thank you for being with us!",
+    "goback": "Go back to the main page",
+    "error_title": "Oops, something went wrong, repeat again"
+  }
+}
