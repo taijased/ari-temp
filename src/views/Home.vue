@@ -18,6 +18,7 @@
 </template>
 <script>
 import AppHeader from "../components/Header";
+import AriService from '../api/AriService.js';
 import axios from 'axios';
 export default {
   data() {
@@ -33,14 +34,18 @@ export default {
       this.send_success = this.validEmail();
       this.send_error = !this.validEmail();
       if (!this.send && this.send_success) {
-        axios.post('http://b.arq.su/subscribe?email=' + this.email)
-          .then(response => {
-            console.log(response);
+        try {
+          new Promise((resolve, reject) => {
+            AriService.subscribe(this.email)
+              .then(response => {
+                console.log(response);
+                resolve(response)
+              })
+              .catch(reject)
           })
-          .catch(e => {
-            console.log(e);
-          })
-        this.send = true
+        } catch (error) {
+          console.log(error + " | sendMail");
+        }
       }
     },
     validEmail () {
